@@ -7,10 +7,15 @@ import { Task } from '../interfaces/task';
   providedIn: 'root'
 })
 export class TasksService {
+  private serverUrl = "http://localhost:3000";
 
   constructor(private http:HttpClient) { }
 
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>("http://localhost:3000");
+    return this.http.get<Task[]>(this.serverUrl);
+  }
+
+  createTask(data: Object): Observable<Task> {
+    return this.http.post<Task>(this.serverUrl, data);
   }
 }

@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { TaskComponent } from './components/task/task.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HomeComponent,
     TaskComponent,
     TasksComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
